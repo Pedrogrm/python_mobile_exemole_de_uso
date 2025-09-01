@@ -13,7 +13,7 @@ def main(page: ft.Page):
 
     # Texto que mostrará a resposta
     resposta = ft.Text(
-        Value="", # Inicialmente vazio
+        value="", # Inicialmente vazio
         size=18,
         text_align=ft.TextAlign.CENTER,
     )
@@ -40,8 +40,18 @@ def main(page: ft.Page):
         page.update()
 
     # Botao para processar o nome
-    botao_ok = ft.ElevatedButtom(
+    botao_ok = ft.ElevatedButton(
+        text="Confirmar",
+        on_click=processar_nome,
+        width=150
+    )
 
+    #Adicionando elemento à págia
+    page.add(
+        ft.Text("Vamos nos conhecer!😊", size=22, weight=ft.FontWeight.BOLD),
+        campo_nome,
+        botao_ok,
+        resposta
     )
 
 ft.app(target=main)
