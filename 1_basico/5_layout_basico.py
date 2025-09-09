@@ -36,7 +36,7 @@ def main(page: ft.Page):
     )
 
     caixa2 = ft.Container(
-        content=ft.Text("Caixa 2, color=ft.Colors.white"),
+        content=ft.Text("Caixa 2", color=ft.Colors.WHITE),
         bgcolor=ft.Colors.ORANGE,
         width=200,
         height=50,
@@ -53,5 +53,19 @@ def main(page: ft.Page):
 
     # layout principal: organizando tudo verticalmente
     layout_principal = ft.Column(
-        controls=[]
+        controls=[
+            titulo,
+            ft.Text("Linha horizontal de botões:", size=16),
+            linha_botoes,
+            ft.Text("Coluna de caixas:", size=16),
+            coluna_caixas,
+            ft.Text("Layout organizado! 🎉", size=14, color=ft.Colors.GREEN)
+        ],
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        spacing=25
     )
+
+    # Adicionando tudo à página
+    page.add(layout_principal)
+
+ft.app(target=main)
