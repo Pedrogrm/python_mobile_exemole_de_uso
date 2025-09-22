@@ -42,5 +42,5 @@ class AppToDo:
         else
             self.main()
 
-    def pedir_nome_usuari
+    def pedir_nome_usuario(self):
     # Cria e exibe o formulario para inserir seu nome
